@@ -68,8 +68,9 @@ function crimesList() {
 }
 
 function callNerd () {
-  const your = randomChoice(['your', 'ur', 'you\'re', 'you are', 'u are', 'thou art' ])
-  return `${your} a nerd!`;
+  const your = randomChoice(['your', 'ur', 'you\'re', 'you are', 'u are', 'thou art' ]);
+  const nerd = randomChoice(['nerd','newt', 'nord', 'nearrrrd','NERD!!', 'nooooooord', 'naaaard']);	
+  return `${your} a ${nerd}!`;
 }
 
 function fluid () {

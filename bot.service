@@ -3,8 +3,8 @@ Description=Chat service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/node  /home/pi/Documents/twitchbot/bot.js
-WorkingDirectory=/home/pi/Documents/twitchbot
+ExecStart=/usr/bin/node  /home/pi/Documents/bottymcbotface/bot.js
+WorkingDirectory=/home/pi/Documents/bottymcbotface
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
