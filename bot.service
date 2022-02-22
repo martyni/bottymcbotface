@@ -1,0 +1,14 @@
+[Unit]
+Description=Chat service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node  /home/pi/Documents/twitchbot/bot.js
+WorkingDirectory=/home/pi/Documents/twitchbot
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
