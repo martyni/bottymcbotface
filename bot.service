@@ -3,12 +3,12 @@ Description=Chat service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/node  /home/pi/Documents/bottymcbotface/bot.js
-WorkingDirectory=/home/pi/Documents/bottymcbotface
+ExecStart=/usr/bin/node  $REPO/bot.js
+WorkingDirectory=$REPO
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
-User=pi
+User=$USER
 
 [Install]
 WantedBy=multi-user.target
