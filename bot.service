@@ -3,7 +3,7 @@ Description=Chat service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/node  $REPO/bot.js
+ExecStart=$NODE  $REPO/bot.js
 WorkingDirectory=$REPO
 StandardOutput=inherit
 StandardError=inherit
