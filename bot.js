@@ -1,5 +1,6 @@
 const tmi = require('tmi.js');
 const creds = require('./creds.js');
+const http = require('http');
 
 
 // Create a client with our options
@@ -18,6 +19,7 @@ function onMessageHandler (target, context, msg, self) {
 
   // Remove whitespace from chat message
   const commandName = msg.trim();
+  sendComment(`${context.username}`, `${msg}`); 
 
   // If the command is known, let's execute it
   if (commandName === '!dice') {
@@ -111,9 +113,17 @@ function generalWarnings () {
 // Called every time the bot connects to Twitch chat
 function onConnectedHandler (addr, port) {
   console.log(`* Connected to ${addr}:${port}`);
+  sendComment('BottymcBotface', `* Connected to ${addr}:${port}`);
 }
 
 // Function for random choice
 function randomChoice(arr) {
     return arr[Math.floor(arr.length * Math.random())];
+}
+
+function sendComment(username, comment) {
+    URL = 'http://192.168.1.94:5000/comment?username='+ username + '&comment=' + comment;
+    http.get(URL, (resp) =>{
+       console.log(resp);
+    });
 }
