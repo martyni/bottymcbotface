@@ -124,6 +124,6 @@ function randomChoice(arr) {
 function sendComment(username, comment) {
     URL = 'http://twitchbot.com:5000/comment?username='+ username + '&comment=' + comment;
     http.get(URL, (resp) =>{
-       console.log(resp);
+       console.log(URL);
     });
 }
