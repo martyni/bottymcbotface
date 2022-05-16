@@ -5,6 +5,7 @@ const http = require('http');
 
 // Create a client with our options
 const client = new tmi.client(creds.opts);
+const WEB_URL = "http://twitchbot.askmartyn"
 
 // Register our event handlers (defined below)
 client.on('message', onMessageHandler);
@@ -122,8 +123,8 @@ function randomChoice(arr) {
 }
 
 function sendComment(username, comment) {
-    URL = 'http://twitchbot.com/comment?username='+ username + '&comment=' + comment;
-    http.get(URL, (resp) =>{
-       console.log(URL);
+    url = WEB_URL + '/comment?username='+ username + '&comment=' + comment;
+    http.get(url, (resp) =>{
+       console.log(url);
     });
 }
