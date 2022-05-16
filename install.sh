@@ -23,7 +23,7 @@ function change {
 
 function test_if_node_installed {
    #Checks if Node is installed  
-   NODE=$(which node 2> /dev/null)\
+   NODE=$(which nodejs 2> /dev/null)\
 	    && info "Node installed" \
 	    || error "Node not installed\nPlease install Nodejs using your package manager."
 }
