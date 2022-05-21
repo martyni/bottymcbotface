@@ -5,7 +5,7 @@ const http = require('http');
 
 // Create a client with our options
 const client = new tmi.client(creds.opts);
-const WEB_URL = "http://twitchbot.askmartyn"
+const WEB_URL = "http://127.0.0.1:5000"
 
 // Register our event handlers (defined below)
 client.on('message', onMessageHandler);
