@@ -43,6 +43,9 @@ function onMessageHandler (target, context, msg, self) {
   } else if (commandName === '!balls'){
     client.say(target, balls());
     console.log(`* ${context.username}: Executed ${commandName} command`);
+  } else if (commandName === '!eelee'){
+    client.say(target, eelee());
+    console.log(`* ${context.username}: Executed ${commandName} command`);
   } else if (commandName === '!links'){
     client.say(target, links());
     console.log(`* ${context.username}: Executed ${commandName} command`);
@@ -59,13 +62,13 @@ function onMessageHandler (target, context, msg, self) {
 
 // Function called when the "dice" command is issued
 function rollDice () {
-  const sides = 6;
+  const sides = 20;
   return Math.floor(Math.random() * sides) + 1;
 }
 
 
 function crimesList() {
-  const commandArray = ['dice', 'nerd', 'balls', 'fluid','warn', 'links', 'shop'];
+  const commandArray = ['dice', 'nerd', 'balls', 'fluid','warn', 'links', 'shop', 'slorp'];
   commandString = "!";
   commandArray.forEach(element => {
 	  commandString = commandString + element + ", !";
@@ -86,10 +89,17 @@ function fluid () {
 }
 
 function balls () {
-  const numberOfBalls = Math.floor(Math.random() * 50)
+  const numberOfBalls = Math.floor(Math.random() * 69)
   const ball_string = "askmar1Lookballs ".repeat( numberOfBalls );
   const end_string = `There were ${numberOfBalls} balls`
   return ball_string + end_string;
+}
+
+function eelee () {
+  const numberOfEelees = Math.floor(Math.random() * 69)
+  const eeleeString = "askmar1Eelee ".repeat( numberOfEelees );
+  const endString = `I love you ${numberOfEelees} many eelees `
+  return eeleeString + endString;
 }
 
 function links () {
