@@ -37,6 +37,9 @@ function onMessageHandler (target, context, msg, self) {
   } else if (commandName === '!fluid'){
     client.say(target, fluid());
     console.log(`* ${context.username}: Executed ${commandName} command`);
+  } else if (commandName === '!slorp'){
+    client.say(target, fluid());
+    console.log(`* ${context.username}: Executed ${commandName} command`);
   } else if (commandName === '!balls'){
     client.say(target, balls());
     console.log(`* ${context.username}: Executed ${commandName} command`);
@@ -60,6 +63,7 @@ function rollDice () {
   return Math.floor(Math.random() * sides) + 1;
 }
 
+
 function crimesList() {
   const commandArray = ['dice', 'nerd', 'balls', 'fluid','warn', 'links', 'shop'];
   commandString = "!";
@@ -77,7 +81,7 @@ function callNerd () {
 }
 
 function fluid () {
-  const wet = randomChoice(['wet', 'moisten', 'fluid', 'slorp', 'wazz', 'spit' ])
+  const wet = randomChoice(['wet', 'moisten', 'fluid', 'slorp', 'wazz', 'spit', 'squirt' ])
   return `${wet} yourself!`;
 }
 
