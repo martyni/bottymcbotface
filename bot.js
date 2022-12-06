@@ -26,35 +26,35 @@ function onMessageHandler (target, context, msg, self) {
   if (commandName === '!dice') {
     const num = rollDice();
     client.say(target, `You rolled a ${num}`);
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!nerd'){
     client.say(target, callNerd());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!warn'){
     client.say(target, contentWarnings());
     client.say(target, generalWarnings());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!fluid'){
     client.say(target, fluid());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!slorp'){
     client.say(target, fluid());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!balls'){
     client.say(target, balls());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!eelee'){
     client.say(target, eelee());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!links'){
     client.say(target, links());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!shop'){
     client.say(target, shop());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!crimeslist'){
     client.say(target, crimesList());
-    console.log(`* ${context.username}: Executed ${commandName} command`);
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else {
     console.log(`* ${context.username}: ${commandName}`);
   }
@@ -68,7 +68,7 @@ function rollDice () {
 
 
 function crimesList() {
-  const commandArray = ['dice', 'nerd', 'balls', 'fluid','warn', 'links', 'shop', 'slorp'];
+  const commandArray = ['dice','eelee', 'nerd', 'balls', 'fluid','warn', 'links', 'shop', 'slorp'];
   commandString = "!";
   commandArray.forEach(element => {
 	  commandString = commandString + element + ", !";
