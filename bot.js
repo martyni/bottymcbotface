@@ -41,11 +41,13 @@ function onMessageHandler (target, context, msg, self) {
     client.say(target, fluid());
     sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else if (commandName === '!balls'){
-    client.say(target, balls());
-    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
+    no_balls = balls()	  
+    client.say(target, no_balls);
+    sendComment(`* ${context.username}`,`${no_balls}`);
   } else if (commandName === '!eelee'){
-    client.say(target, eelee());
-    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
+    no_eelee = eelee()	   
+    client.say(target, no_eelee);
+    sendComment(`* ${context.username}`,`${no_eelee}`);
   } else if (commandName === '!links'){
     client.say(target, links());
     sendComment(`* ${context.username}`,` Executed ${commandName} command`);
