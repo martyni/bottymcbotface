@@ -6,6 +6,7 @@ const http = require('http');
 // Create a client with our options
 const client = new tmi.client(creds.opts);
 const WEB_URL = "http://127.0.0.1:5000"
+const EMOJI_URL = "http://emote.askmartyn:5000/channel/"
 
 // Register our event handlers (defined below)
 client.on('message', onMessageHandler);
@@ -22,6 +23,8 @@ function onMessageHandler (target, context, msg, self) {
   const commandName = msg.trim();
   sendComment(`${context.username}`, `${msg}`); 
 
+
+  addChannel = new RegExp('\!channel (.*)');
   // If the command is known, let's execute it
   if (commandName === '!dice') {
     const num = rollDice();
@@ -57,6 +60,12 @@ function onMessageHandler (target, context, msg, self) {
   } else if (commandName === '!crimeslist'){
     client.say(target, crimesList());
     sendComment(`* ${context.username}`,` Executed ${commandName} command`);
+  } else if (commandName.re(addChannel)){
+    match = commandName.re(addChannel);  
+    channel = match[1];  
+    client.say(target, crimesList());
+    addEmojiChannel(channel);
+    sendComment(`* ${context.username}`,` Executed ${commandName} for ${channel}`);
   } else {
     console.log(`* ${context.username}: ${commandName}`);
   }
@@ -144,3 +153,11 @@ function sendComment(username, comment) {
        console.log(url);
     });
 }
+
+function addEmojiChannel(channel) {
+    url = EMOJI_URL + channel;
+    http.get(url, (resp) =>{
+       console.log(url);
+    });
+}
+
