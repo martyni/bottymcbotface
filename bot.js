@@ -79,7 +79,7 @@ function rollDice () {
 
 
 function crimesList() {
-  const commandArray = ['dice','eelee', 'nerd', 'balls', 'fluid','warn', 'links', 'shop', 'slorp'];
+  const commandArray = ['channel', 'dice','eelee', 'nerd', 'balls', 'fluid','warn', 'links', 'shop', 'slorp'];
   commandString = "!";
   commandArray.forEach(element => {
 	  commandString = commandString + element + ", !";
