@@ -60,12 +60,11 @@ function onMessageHandler (target, context, msg, self) {
   } else if (commandName === '!crimeslist'){
     client.say(target, crimesList());
     sendComment(`* ${context.username}`,` Executed ${commandName} command`);
-  } else if (commandName.re(addChannel)){
-    match = commandName.re(addChannel);  
+  } else if (addChannel.test(commandName)){
+    match = commandName.match(addChannel);  
     channel = match[1];  
-    client.say(target, crimesList());
     addEmojiChannel(channel);
-    sendComment(`* ${context.username}`,` Executed ${commandName} for ${channel}`);
+    sendComment(`* ${context.username}`,` Executed ${commandName}`);
   } else {
     console.log(`* ${context.username}: ${commandName}`);
   }
