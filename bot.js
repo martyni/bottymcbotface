@@ -65,6 +65,9 @@ function onMessageHandler (target, context, msg, self) {
     channel = match[1];  
     addEmojiChannel(channel);
     sendComment(`* ${context.username}`,` Executed ${commandName}`);
+  } else if (commandName === '!discord'){
+    client.say(target, discord());
+    sendComment(`* ${context.username}`,` Executed ${commandName} command`);
   } else {
     console.log(`* ${context.username}: ${commandName}`);
   }
@@ -114,6 +117,11 @@ function eelee () {
 
 function links () {
   const linkString = `https://linktr.ee/askmartyn`;
+  return linkString;
+}
+
+function discord () {
+  const linkString = `follow me on twitch to join our discord. Follow these instructions https://shorturl.at/dwEIZ`;
   return linkString;
 }
 
