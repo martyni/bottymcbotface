@@ -121,7 +121,7 @@ function links () {
 }
 
 function discord () {
-  const linkString = `follow me on twitch to join our discord. Follow these instructions https://shorturl.at/dwEIZ`;
+  const linkString = `subscribe to me on twitch to join our discord! Follow these instructions https://shorturl.at/dwEIZ`;
   return linkString;
 }
 
