@@ -7,6 +7,7 @@ const http = require('http');
 const client = new tmi.client(creds.opts);
 const WEB_URL = "http://127.0.0.1:5000"
 const EMOJI_URL = "http://emote.askmartyn:5000/channel/"
+const HIGHLIGHT_URL = "http://192.168.1.101/message/"
 
 // Register our event handlers (defined below)
 client.on('message', onMessageHandler);
@@ -102,14 +103,18 @@ function fluid () {
 }
 
 function balls () {
-  const numberOfBalls = Math.floor(Math.random() * 69)
+  const numberOfBalls = Math.floor(Math.random() * 70)
   const ball_string = "askmar1Lookballs ".repeat( numberOfBalls );
+  if (numberOfBalls == 69) {
+	  ball_string =  ball_string + " nice! B)"
+  };
+
   const end_string = `There were ${numberOfBalls} balls`
   return ball_string + end_string;
 }
 
 function eelee () {
-  const numberOfEelees = Math.floor(Math.random() * 69)
+  const numberOfEelees = Math.floor(Math.random() * 70)
   const eeleeString = "askmar1Eelee ".repeat( numberOfEelees );
   const endString = `I love you ${numberOfEelees} many eelees `
   return eeleeString + endString;
@@ -156,6 +161,15 @@ function randomChoice(arr) {
 
 function sendComment(username, comment) {
     url = WEB_URL + '/comment?username='+ username + '&comment=' + comment;
+    http.get(url, (resp) =>{
+       console.log(url);
+    });
+}
+
+function sendHighlight( comment) {
+    url = HIGHLIGHT_URL + comment;
+    url = "http://192.168.1.101/message/" + comment
+    console.log(url)	
     http.get(url, (resp) =>{
        console.log(url);
     });
